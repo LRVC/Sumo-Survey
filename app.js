@@ -5,7 +5,7 @@ var express = require('express')
     , bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var dashboard = require('./routes/dashboard');
+var dashboard = require('./routes/dashboard')
 
 var app = express();
 
