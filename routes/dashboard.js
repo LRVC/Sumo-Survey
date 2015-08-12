@@ -1,8 +1,7 @@
 var express = require('express')
-		, router = express.Router()
-		, methodOverride = require('method-override');
+		, router = express.Router();
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('dashboard');
 });
 

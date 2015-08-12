@@ -5,8 +5,9 @@ var express = require('express')
     , bodyParser = require('body-parser')
     , Sequelize = require('sequelize');
 
-var routes = require('./routes/index');
-var dashboard = require('./routes/dashboard')
+var routes = require('./routes/index')
+    , dashboard = require('./routes/dashboard')
+    , question = require('./routes/question');
 
 var app = express();
 
@@ -22,6 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/dashboard', dashboard);
+app.use('/question', question);
+
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
