@@ -1,6 +1,7 @@
-var sequelize = new Sequelize('sumosurvey', '', '', {
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('sumosurvey', 'Reece', '', {
   host: 'localhost',
-  dialect: 'mysql',
+  dialect: 'postgres',
 
   pool: {
     max: 5,
@@ -8,3 +9,12 @@ var sequelize = new Sequelize('sumosurvey', '', '', {
     idle: 10000
   }
 });
+
+var test = sequelize.authenticate()
+    .then(function () {
+        console.log("Connected");
+    })
+    .catch(function (err) {
+        console.log(err);
+    })
+    .done();

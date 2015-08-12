@@ -2,7 +2,8 @@ var express = require('express')
     , path = require('path')
     , logger = require('morgan')
     , cookieParser = require('cookie-parser')
-    , bodyParser = require('body-parser');
+    , bodyParser = require('body-parser')
+    , Sequelize = require('sequelize');
 
 var routes = require('./routes/index');
 var dashboard = require('./routes/dashboard')
@@ -11,6 +12,7 @@ var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.set('models', require('./models'));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
