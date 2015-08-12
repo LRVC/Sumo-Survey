@@ -1,8 +1,15 @@
 var express = require('express')
-		, router = express.Router();
+		, router = express.Router()
+    , models = require('../models');
 
 router.get('/', function(req, res) {
-  res.render('dashboard');
+  models.Question.findAll({
+
+  }).then(function(questions) {
+    res.render('dashboard', {
+      questions: questions
+    });
+  });
 });
 
 module.exports = router;

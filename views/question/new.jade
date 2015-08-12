@@ -2,20 +2,23 @@ extends ../layout
 
 block content
   body
-    form.pure-form.pure-form-aligned
+    form(action="/question/new", method="post").pure-form.pure-form-aligned
       fieldset
         .pure-control-group
-          label(for='name') Question
-          input#name(type='text', placeholder='Question')
+          label Question
+          input#name(type='text', placeholder='Question', name="question")
         .pure-control-group
-          label(for='password') Answer One
-          input#password(type='password', placeholder='Answer One')
+          label Answer One
+          input#password(type='text', placeholder='Answer One', name='answer_a')
         .pure-control-group
-          label(for='email') Answer Two
-          input#email(type='email', placeholder='Answer Two')
+          label Answer Two
+          input#email(type='text', placeholder='Answer Two', name='answer_b')
         .pure-control-group
-          label(for='foo') Answer Three
-          input#foo(type='text', placeholder='Answer Three')
+          label Answer Three
+          input#foo(type='text', placeholder='Answer Three', name='answer_c')
+        .pure-control-group
+          label Answer Three
+          input#foo(type='text', placeholder='Answer Three', name='answer_d')
         .pure-controls
           button.pure-button.pure-button-primary(type='submit') Submit  
 

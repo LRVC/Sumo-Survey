@@ -1,13 +1,9 @@
-var Sequelize = require('sequelize');
+var Sequelize = require('sequelize')
+var sqlObj = {}
+
 var sequelize = new Sequelize('sumosurvey', 'Reece', '', {
   host: 'localhost',
-  dialect: 'postgres',
-
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  }
+  dialect: 'postgres'
 });
 
 var test = sequelize.authenticate()
@@ -18,3 +14,25 @@ var test = sequelize.authenticate()
         console.log(err);
     })
     .done();
+
+var models = [
+  'Question',
+  'Answer'
+];
+
+models.forEach(function(model) {
+  sqlObj[model] = sequelize.import(__dirname + '/' + model);
+});
+
+sqlObj.Question.sync({force: true});
+sqlObj.Answer.sync({force: true});
+
+
+(function(model) {
+  model.Question.hasMany(model.Answer);
+})(sqlObj);
+
+sqlObj.sequelize = sequelize;
+sqlObj.Sequelize = Sequelize;
+
+module.exports = sqlObj;

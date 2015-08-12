@@ -3,7 +3,8 @@ var express = require('express')
     , logger = require('morgan')
     , cookieParser = require('cookie-parser')
     , bodyParser = require('body-parser')
-    , Sequelize = require('sequelize');
+    , Sequelize = require('sequelize')
+    , models = require('./models/index.js');
 
 var routes = require('./routes/index')
     , dashboard = require('./routes/dashboard')
