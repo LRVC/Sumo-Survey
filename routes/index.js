@@ -18,13 +18,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/create', function(req, res, next) {
-	models.Answer.findAll({
-		where: {
-			question_id: 1
-		}
-	}).then(function(answer) {
-		res.render('/')
-	})
+	console.log(req.body);
+	res.redirect('/');
 });
 
 module.exports = router;

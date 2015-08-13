@@ -14,7 +14,23 @@ module.exports = function(sequelize, DataTypes) {
     },
     answer_c: { 
     	type: DataTypes.TEXT
-    },  
+    },
+    a_count: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    },
+    b_count: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    },
+    c_count: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    },
+    d_count: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    }
   });
 
   return Question;

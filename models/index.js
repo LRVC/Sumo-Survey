@@ -16,8 +16,7 @@ var test = sequelize.authenticate()
     .done();
 
 var models = [
-  'Question',
-  'Answer'
+  'Question'
 ];
 
 models.forEach(function(model) {
@@ -25,12 +24,6 @@ models.forEach(function(model) {
 });
 
 // sqlObj.Question.sync({force: true});
-// sqlObj.Answer.sync({force: true});
-
-
-(function(model) {
-  model.Question.hasMany(model.Answer);
-})(sqlObj);
 
 sqlObj.sequelize = sequelize;
 sqlObj.Sequelize = Sequelize;
