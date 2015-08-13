@@ -2,17 +2,21 @@ extends layout
 
 block content
   body
-    .header
-      .home-menu.pure-menu.pure-menu-horizontal.pure-menu-fixed
-        a.pure-menu-heading(href='') Your Site
-        ul.pure-menu-list
-          li.pure-menu-item
-            a.pure-menu-link(href='#') Admin
-    .splash-container
-      .splash
-        each question in questions
-          h1.splash-head= question.question_body
-            ul.splash-subhead
-              li= question.answer_a
-          
-        
+    -var id = question.id
+    h1= id
+    h1= question.question_body
+    form(action="/question/create", method="post")
+      //- input(type='hidden', name='#{question.id}')
+      label(for='option-two' value="option1")= question.answer_a
+        input#option-two(type='radio')
+      br
+      label(for='option-two' value="option2")= question.answer_b
+        input#option-three(type='radio')
+      br
+      label(for='option-two' value="option3")= question.answer_c
+        input#option-four(type='radio')
+      br
+      label(for='option-two' value="option4")= question.answer_d
+        input#option-four(type='radio')
+      br
+      input(type='submit' value='Submit')

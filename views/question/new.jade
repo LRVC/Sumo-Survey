@@ -3,7 +3,7 @@ extends ../layout
 block content
   body
     h1.new-header New Question
-    form(action="/question/new", method="post").pure-form.pure-form-aligned
+    form(action="/question/create", method="post").pure-form.pure-form-aligned
       fieldset
         .pure-control-group
           label Question
@@ -19,7 +19,7 @@ block content
           input#foo(type='text', placeholder='Answer Three', name='answer_c')
         .pure-control-group
           label Answer Three
-          input#foo(type='text', placeholder='Answer Three', name='answer_d')
+          input#foo(type='text', placeholder='Answer Four', name='answer_d')
         .pure-controls
           button.pure-button.pure-button-primary(type='submit') Submit  
 
