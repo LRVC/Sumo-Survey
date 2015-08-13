@@ -1,12 +1,15 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+		, router = express.Router()
+		, models = require('../models');
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+  models.Question.findAll({
 
-router.get('/dashboard', function(req, res, next) {
-	res.render('dashboard');
+  }).then(function(questions) {
+    res.render('index', {
+      questions: questions
+    });
+  });
 });
 
 module.exports = router;

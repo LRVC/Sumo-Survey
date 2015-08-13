@@ -12,10 +12,11 @@ router.get('/new', function(req, res) {
 
 router.post('/new', function(req, res) {
   models.Question.create({
-    question_body: req.body.question,
-    answer_a: req.body.answer_a,
-    answer_b: req.body.answer_b,
-    answer_c: req.body.answer_c
+    question_body: "Test Question",
+    answer_a: "Answer A",
+    answer_b: "Answer B",
+    answer_c: "Answer C",
+    answer_d: "Answer D"
   }).then(function() {
     res.redirect('/');
   });

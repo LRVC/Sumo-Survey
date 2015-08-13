@@ -24,8 +24,8 @@ models.forEach(function(model) {
   sqlObj[model] = sequelize.import(__dirname + '/' + model);
 });
 
-sqlObj.Question.sync({force: true});
-sqlObj.Answer.sync({force: true});
+// sqlObj.Question.sync({force: true});
+// sqlObj.Answer.sync({force: true});
 
 
 (function(model) {

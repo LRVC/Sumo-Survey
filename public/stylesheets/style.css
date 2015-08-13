@@ -39,6 +39,10 @@ label {
     text-align: center;
 }
 
+.pure-form {
+    padding-left: 200px;
+}
+
 .pure-form label {
     margin: 1em 0 0;
     font-weight: bold;
@@ -49,7 +53,7 @@ label {
     border: 2px solid #ddd;
     box-shadow: none;
     font-size: 100%;
-    width: 100%;
+    width: 50%;
     margin-bottom: 1em;
 }
 

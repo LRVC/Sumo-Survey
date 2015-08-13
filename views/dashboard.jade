@@ -2,7 +2,11 @@ extends layout
 
 block content
   body
-    ul
-      each question in questions
-        li
-          = question.question_body
+    p Test
+    each question in questions
+      ul
+        li= question.question_body
+        li= question.answer_a
+        li= question.answer_b
+        li= question.answer_c
+        

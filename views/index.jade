@@ -10,11 +10,9 @@ block content
             a.pure-menu-link(href='#') Admin
     .splash-container
       .splash
-        h1.splash-head Big Bold Text
-        p.splash-subhead
-          | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        p
-          a.pure-button.pure-button-primary(href='http://purecss.io') Get Started
-    .footer.l-box.is-center
-      p  
-        | View the source of this layout to learn more. Made with love by the YUI Team.
+        each question in questions
+          h1.splash-head= question.question_body
+            ul.splash-subhead
+              li= question.answer_a
+          
+        
