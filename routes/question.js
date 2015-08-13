@@ -18,7 +18,7 @@ router.post('/create', function(req, res) {
     answer_c: req.body.answer_c,
     answer_d: req.body.answer_d
   }).then(function() {
-    res.redirect('/');
+    res.redirect('/dashboard');
   });
 });
 

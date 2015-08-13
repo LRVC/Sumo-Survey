@@ -18,7 +18,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/create', function(req, res, next) {
-	console.log(req.body);
+  var answer = req.body.answer
+  models.Question.find({
+    
+  })
 	res.redirect('/');
 });
 

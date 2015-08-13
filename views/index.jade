@@ -2,20 +2,19 @@ extends layout
 
 block content
   body
-    h1= test
-    h1= question.question_body
-    form(action="/create", method="post")
-      input(type='hidden', name='question_id', value='#{question.id}')
-      label(name="answers" value="a_count")= question.answer_a
-        input#option-two(type='radio')
-      br
-      label(name="answers" value="b_count")= question.answer_b
-        input#option-three(type='radio')
-      br
-      label(name="answers" value="c_count")= question.answer_c
-        input#option-four(type='radio')
-      br
-      label(name="answers" value="d_count")= question.answer_d
-        input#option-four(type='radio')
-      br
-      input.submit-answer(type='submit' value='Submit')
+    h1= question.question_body + " ?"
+      form(action="/create", method="post")
+        input(type='hidden', name='question_id', value='#{question.id}')
+        input(type='radio', name='answers', value='a_count')
+        = question.answer_a
+        br
+        input(type='radio', name='answers', value='b_count')
+        = question.answer_b
+        br
+        input(type='radio', name='answers', value='c_count')
+        = question.answer_c
+        br
+        input(type='radio', name='answers', value='d_count')
+        = question.answer_d
+        br    
+        input.button#answer(type='submit' value='Submit')

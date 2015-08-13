@@ -1,12 +1,12 @@
 extends layout
 
 block content
-  body
-    p Test
-    each question in questions
-      ul
-        li= question.question_body
-        li= question.answer_a
-        li= question.answer_b
-        li= question.answer_c
-        
+	body
+		a(href="/question/new") New Question
+		each question in questions
+			h1= question.question_body + " ?"
+			ul.small-block-grid-4
+				li= question.answer_a + " -- " + question.a_count + " votes"
+				li= question.answer_b + " -- " + question.b_count + " votes"
+				li= question.answer_c + " -- " + question.c_count + " votes"
+				li= question.answer_d + " -- " + question.d_count + " votes"

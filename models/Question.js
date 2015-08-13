@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
     answer_c: { 
     	type: DataTypes.TEXT 
     },
-    answer_c: { 
+    answer_d: { 
     	type: DataTypes.TEXT
     },
     a_count: {
