@@ -22,7 +22,7 @@ npm start
 ```
 Shut down your server and remove this line, which creates the tables 
 ```
-\\ models/index.js
+// models/index.js
 sqlObj.Question.sync({force: true});
 
 ```
