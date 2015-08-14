@@ -1,30 +1,73 @@
 extends layout
 
 block content
-  if question
-    nav.navbar.navbar-default
-      .container-fluid
-        .navbar-header
-          a.navbar-brand(href='#') Brand
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          ul.nav.navbar-nav.navbar-right
-            li
-              a(href='/dashboard') Admin
-    h1= question.question_body + " ?"
-      form(action="/create", method="post")
-        input(type='hidden', name='question_id', value='#{question.id}')
-        input(type='radio', name='answers', value='a_count')
-        = question.answer_a
-        br
-        input(type='radio', name='answers', value='b_count')
-        = question.answer_b
-        br
-        input(type='radio', name='answers', value='c_count')
-        = question.answer_c
-        br
-        input(type='radio', name='answers', value='d_count')
-        = question.answer_d
-        br    
-        input.button#answer(type='submit' value='Submit')          
+  style(type='text/css').
+      * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      }
+      
+      body {
+      line-height: 1.7em;
+      color: #7f8c8d;
+      font-size: 13px;
+      background-color: #1f8dd6;
+      }
+      html {
+      box-sizing: border-box;
+      }
+      .bar {
+      display: flex;
+      width: 100%;
+      background: #1f8dd6;
+      padding: 20px;
+      text-align: center;
+      }
+      h2 {
+      color: white;
+      text-align: center;
+      }
+      h1 {
+      color: white; 
+      text-align: center;
+      }
+      .right {
+        padding-left: 80%;
+      }
+      .center {
+      width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      }
+      a {
+      text-decoration: none;
+      color: white;
+      }
 
+  if question
+    .bar
+      h2 Sumo Survey
+      h2.right
+        a(href="/dashboard") Admin
+    .center 
+      h1= question.question_body + " ?"
+        br
+        form(action="/create", method="post")
+          input(type='hidden', name='question_id', value='#{question.id}')
+          input(type='radio', name='answers', value='a_count')
+          = "  " + question.answer_a
+          br
+          input(type='radio', name='answers', value='b_count')
+          = "  " + question.answer_b
+          br
         
+          input(type='radio', name='answers', value='c_count')
+          = "  " + question.answer_c
+          br
+        
+          input(type='radio', name='answers', value='d_count')
+          = "  " + question.answer_d
+          br    
+          input.btn.btn-info#answer(type='submit' value='Submit')          
+
