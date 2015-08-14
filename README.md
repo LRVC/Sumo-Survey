@@ -26,7 +26,7 @@ Shut down your server and remove this line, which creates the tables
 sqlObj.Question.sync({force: true});
 
 ```
-Run this command again and the app will be up and running
+Run this command again and the app will be up and running. Click on 'Admin' in the browser to navigate to the dashboard and create new questions.
 ```bash
 npm start
 ```

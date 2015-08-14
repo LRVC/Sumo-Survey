@@ -44,12 +44,14 @@ block content
       text-decoration: none;
       color: white;
       }
-
+  .bar
+    h2 Sumo Survey
+    h2.right
+      a(href="/dashboard") Admin
+  .center
+    h2 There are no questions!
+    
   if question
-    .bar
-      h2 Sumo Survey
-      h2.right
-        a(href="/dashboard") Admin
     .center 
       h1= question.question_body + " ?"
         br
