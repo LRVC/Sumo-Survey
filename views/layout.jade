@@ -5,29 +5,28 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
 
     link(rel='stylesheet', href='/public/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/foundation.min.css')
-    link(rel='stylesheet', href='/stylesheets/normalize.css')
-
-    script(src='//code.jquery.com/jquery-1.11.3.min.js')
-    script(src='/javascripts/foundation.min.js')
-    
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+
+    script(src='//code.jquery.com/jquery-1.11.3.min.js')  
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
 
     
 
     script.
       $(document).ready(function() {
-      $('.button').on("click", function() {
-      var answer = $( "input:checked" ).val();
+      $('.button').on("click", function(e) {
+        e.preventDefault();
+      var data = {}
+      data.answer = $( "input:checked" ).val();
       $.ajax({
       type: "POST",
       url: "/create",
-      data: { "answer": answer },
+      data: JSON.stringify(data);
       success: function(data) {
       
       }
       });
       });
       });
+  
   block content

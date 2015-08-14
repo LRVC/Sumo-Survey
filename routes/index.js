@@ -10,7 +10,6 @@ router.get('/', function(req, res, next) {
   		return Math.floor(Math.random() * (max - min) + min);
 		};
 		var randNum = getRandomArbitrary(0, questions.length)
-  	console.log(randNum);
     res.render('index', {
       question: questions[randNum]
     });
@@ -18,11 +17,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/create', function(req, res, next) {
-  var answer = req.body.answer
   models.Question.find({
-    
+    where: {
+      id: req.body.question_id
+    }
+  }).then(function(question) {
+    question.increment(JSON.stringify(req.body.answers));
+    res.redirect('/');
   })
-	res.redirect('/');
 });
 
 module.exports = router;

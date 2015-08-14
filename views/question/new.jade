@@ -2,24 +2,18 @@ extends ../layout
 
 block content
   body
-    h1.new-header New Question
-    form(action="/question/create", method="post").pure-form.pure-form-aligned
+    h1 New Question
+    form(action="/question/create", method="post")
       fieldset
-        .pure-control-group
           label Question
           input#name(type='text', placeholder='Question', name="question")
-        .pure-control-group
           label Answer One
           input#password(type='text', placeholder='Answer One', name='answer_a')
-        .pure-control-group
           label Answer Two
           input#email(type='text', placeholder='Answer Two', name='answer_b')
-        .pure-control-group
           label Answer Three
           input#foo(type='text', placeholder='Answer Three', name='answer_c')
-        .pure-control-group
           label Answer Four
           input#foo(type='text', placeholder='Answer Four', name='answer_d')
-        .pure-controls
-          button.pure-button.pure-button-primary(type='submit') Submit  
+          button(type='submit') Submit  
 
